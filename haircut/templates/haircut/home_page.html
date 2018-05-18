@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Chris' barbershop</title>
+</head>
+<body>
+    <h1>Kool Karen's barbershop Store</h1>
+    <p>Your convenience is our duty</p>
+
+    <!-- Item 1 -->
+    <p>wash hair for 20 yuan</p>
+    <img src="https://cn.bing.com/images/search?view=detailV2&ccid=WNkCdkmi&id=B17FC19CE4802BD6BE6353D4DED02A2EE58D3791&thid=OIP.WNkCdkmi5IFXpAM5_3QIdAHaGe&mediaurl=http%3a%2f%2fmedia.musely.com%2fu%2fb9466d94-d2a7-42fe-a7b4-9aa0d7eb5d2c.jpg&exph=960&expw=1097&q=hair+wash+&simid=608001508387913922&selectedIndex=4">
+
+    <!-- Item 2 -->
+    <p>cut hair for 30 yuan</p>
+    <img src="https://cn.bing.com/images/search?view=detailV2&ccid=wBHgpwHo&id=E2E4098526510A9633E9CC480E202A343EA4EC64&thid=OIP.wBHgpwHoQSjAXS7P7MGhGwHaJ4&mediaurl=https%3a%2f%2fstatic.zerochan.net%2fSweeney.Todd%253A.The.Demon.Barber.of.Fleet.Street.full.918233.jpg&exph=1024&expw=768&q=cutting+hair+demon&simid=607997561312838670&selectedIndex=2">
+
+    <!-- Item 3 --> 
+    <p>perm for 15 yuan</p>
+    <img src="https://image.baidu.com/search/detail?ct=503316480&z=&tn=baiduimagedetail&ipn=d&word=%E7%83%AB%E5%A4%B4&step_word=&ie=utf-8&in=&cl=2&lm=-1&st=-1&cs=3752172612,3791138100&os=3905142894,3575545611&simid=4091869259,468447615&pn=16&rn=1&di=11648604880&ln=1979&fr=&fmq=1526616946606_R&ic=0&s=undefined&se=&sme=&tab=0&width=&height=&face=undefined&is=0,0&istype=2&ist=&jit=&bdtype=0&spn=0&pi=0&gsm=0&objurl=http%3A%2F%2Fs15.sinaimg.cn%2Forignal%2F4a3015cc2a817603593ce&rpstart=0&rpnum=0&adpicid=0">
+
+    <!-- User Form -->
+    <h1>Place Your Order</h1>
+    <form action="{% url 'haircut:home_page' %} " method="POST">
+        {% csrf_token %}
+        <input type="text" name="time" placeholder="Type Your Item"><br>
+        <input type="text" name="customer_name" placeholder="Type Your Item"><br>
+        <input type="text" name="barber_name" placeholder="Type Your Item"><br>
+        <input type="submit" value="Get Now!">
+    </form>
+    <h1>Your Order</h1>
+    <p>time: {{time}}</p>
+    <p>Customer_name: {{customer_name}}</p>
+
+</body>
+</html>
